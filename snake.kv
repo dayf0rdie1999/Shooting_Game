@@ -1,0 +1,38 @@
+#:import random random
+
+# Creating SnakePart in Widget
+<SnakePart>:
+    size: 40,40
+    canvas.before:
+        Color:
+            rgb: random.random(),random.random(),random.random()
+        # This can also be used to create circle with the same foca
+        Ellipse:
+            pos: self.pos
+            size: self.size
+# With <haha> you have to generate it, but without you automatically run it directly without self.build
+
+GameScreen:
+    canvas.before:
+        Color:
+            rgb: 1, 1, 1
+        Rectangle:
+            pos: self.pos
+            size: self.size
+
+    # Creating a food widget
+    Widget:
+        pos: 120, 120
+        size: 40, 40
+        id: food
+        canvas.before:
+            Color:
+                rgb: .5,.5,.5
+
+            Ellipse
+                pos: self.pos
+                size: self.size
+
+
+
+

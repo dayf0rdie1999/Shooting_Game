@@ -1,0 +1,91 @@
+<Bullet>:
+    size: 40,40
+    canvas.before:
+        Ellipse:
+            source: "clash2.png"
+            size: self.size
+            pos: self.pos
+
+<Tank>:
+    id: tank
+    size: 100,100
+    pos : 0, 0
+    canvas:
+        Rectangle:
+            source: "cartoonship%20green.png"
+            size: self.size
+            pos: self.pos
+
+<Monster>:
+    size: 80,80
+    pos: 120, 500
+    canvas:
+        Rectangle:
+            source: "roundysh.png"
+            size: self.size
+            pos: self.pos
+
+<LB>:
+    id: Label
+    pos: 200,300
+    text: "Enter Your Name"
+    font_size: 32
+
+<PlayerName_LB>:
+    pos: 350, 480
+    text: "Player Board"
+    font_size: 48
+
+<TI>:
+    id: player
+    pos: 380,320
+    multiline: False
+    size: 300, 50
+    font_size: 32
+
+GameScreen:
+    id: Game_Screen
+    score_widget: score_widget
+    canvas.before:
+        Rectangle:
+            source: "space-bkg.png"
+            pos: self.pos
+            size: self.size
+
+    Label:
+        id: score_widget
+        pos: self.x, self.height / 0.2
+        color: 1,0,1,1
+        text: "Score:"
+
+<Start>:
+    id: start
+    pos: 250,250
+    color: 1,0,0,1
+    text: "Start"
+    font_size: 32
+    size: 300,50
+
+<Restart>:
+    id: restart
+    pos: 250,100
+    color: 1,0,0,1
+    text: "Restart"
+    font_size: 32
+    size: 300,50
+
+<CusLabel@Label>:
+    font_size: 32
+    font_size: '25sp'
+    markup: False
+
+<RV>:
+    viewclass: 'CusLabel'
+    pos: 250,200
+    size: 300,300
+    RecycleBoxLayout:
+        default_size: 20,40
+        default_size_hint: 1, None
+        size_hint_y: None
+        height: self.minimum_height
+        orientation: 'vertical'
